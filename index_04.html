@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Array </title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1> Массив в строку </h1>
+		
+		<script>
+		
+			var addArr = function flatArr(toArr) {
+				var newArray = [];
+
+				function addingArr(toArr) {
+					for (var i = 0;  i < toArr.length;  i++) {
+					(Array.isArray(toArr[i])) ? addingArr(toArr[i]) : newArray = newArray.concat(toArr [i]);
+					}	
+					return newArray;
+				}
+				return addingArr(toArr);
+			}
+
+			var arr  = [
+				0,
+				[1, 2, 3, 4, 5, 6],
+				[7, 8, 9, [
+				 	10, 11 ,12 ,13]],
+				[14, 15, 16],
+				17];
+	   		
+	   		console.log (addArr(arr));
+
+		</script>
+	</body>
+</html>
